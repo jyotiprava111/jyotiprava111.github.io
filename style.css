@@ -1,0 +1,368 @@
+/* ----- RESET & BASE ----- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #f5f9fc;
+  color: #1a2b3c;
+  line-height: 1.6;
+  padding: 2rem 1rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 2rem;
+  box-shadow: 0 20px 40px -12px rgba(0, 20, 40, 0.25);
+  overflow: hidden;
+  transition: all 0.2s;
+}
+
+/* ----- GRID LAYOUT (responsive) ----- */
+.resume-grid {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 0;
+}
+
+@media (max-width: 800px) {
+  .resume-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ----- SIDEBAR (left) ----- */
+.sidebar {
+  background: #0b2a3e;
+  color: #eef6fc;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+.profile {
+  text-align: center;
+}
+
+.avatar-placeholder {
+  width: 130px;
+  height: 130px;
+  background: #2a4b62;
+  border-radius: 50%;
+  margin: 0 auto 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid #6c8fa0;
+  font-size: 3.5rem;
+  font-weight: 600;
+  color: #d4e9f5;
+  box-shadow: 0 8px 14px rgba(0, 0, 0, 0.3);
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="40" r="22" fill="%233b6882"/><circle cx="50" cy="90" r="32" fill="%233b6882"/></svg>');
+  background-size: cover;
+  background-position: center;
+}
+
+.sidebar h1 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  color: white;
+  margin-bottom: 0.2rem;
+}
+
+.sidebar .title-role {
+  font-size: 0.95rem;
+  color: #b6d6e8;
+  font-weight: 400;
+  border-bottom: 1px solid #3d637b;
+  padding-bottom: 0.8rem;
+  margin-bottom: 0.6rem;
+}
+
+.contact-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 0.9rem;
+  color: #d4e4ef;
+  word-break: break-word;
+}
+
+.contact-item i {
+  width: 1.4rem;
+  font-size: 1.1rem;
+  color: #8bb9d4;
+  text-align: center;
+}
+
+.contact-item a {
+  color: #d4e4ef;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.contact-item a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+.sidebar-section {
+  margin-top: 0.2rem;
+}
+
+.sidebar-section h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  color: #b0d0e3;
+  border-bottom: 1px solid #3d637b;
+  padding-bottom: 0.4rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skill-tag {
+  background: #1d4055;
+  padding: 0.3rem 0.9rem;
+  border-radius: 30px;
+  font-size: 0.8rem;
+  color: #e1f0fa;
+  border: 1px solid #37607a;
+}
+
+.lang-item,
+.info-item {
+  font-size: 0.9rem;
+  margin-bottom: 0.3rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.lang-item strong,
+.info-item strong {
+  min-width: 70px;
+  color: #b6d6e8;
+  font-weight: 500;
+}
+
+.hobby-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem 1rem;
+  font-size: 0.9rem;
+}
+
+.hobby-list i {
+  margin-right: 0.3rem;
+  color: #8bb9d4;
+}
+
+/* ----- MAIN (right) ----- */
+.main-content {
+  padding: 2rem 2rem 2rem 2.2rem;
+  background: white;
+}
+
+.main-content section {
+  margin-bottom: 2.2rem;
+}
+
+.main-content h2 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #0b2a3e;
+  border-bottom: 3px solid #d0e3ee;
+  padding-bottom: 0.3rem;
+  margin-bottom: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.main-content h2 i {
+  color: #2b6a8a;
+  font-size: 1.2rem;
+}
+
+.exp-item,
+.pub-item,
+.project-item,
+.role-item {
+  margin-bottom: 1.2rem;
+}
+
+.exp-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  font-weight: 600;
+  color: #0b2a3e;
+}
+
+.exp-header .title {
+  font-size: 1rem;
+}
+
+.exp-header .date {
+  font-weight: 400;
+  color: #3a627c;
+  font-size: 0.85rem;
+  background: #e7f0f7;
+  padding: 0.1rem 0.8rem;
+  border-radius: 30px;
+}
+
+.exp-sub {
+  font-weight: 600;
+  color: #1e4b66;
+  margin: 0.1rem 0 0.2rem;
+  font-size: 0.95rem;
+}
+
+.exp-desc {
+  font-size: 0.93rem;
+  color: #1f3d51;
+  margin-top: 0.2rem;
+  padding-left: 0.2rem;
+}
+
+.pub-item {
+  border-left: 3px solid #b6d0df;
+  padding-left: 1rem;
+}
+
+.pub-item a {
+  color: #1a5a7a;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.pub-item a:hover {
+  text-decoration: underline;
+}
+
+.pub-item .pub-authors {
+  font-size: 0.9rem;
+  color: #2c4d64;
+}
+
+.pub-item .pub-venue {
+  font-size: 0.85rem;
+  color: #3f637d;
+}
+
+.role-item {
+  background: #f2f8fe;
+  padding: 0.8rem 1.2rem;
+  border-radius: 16px;
+}
+
+.role-item strong {
+  color: #0b2a3e;
+}
+
+.role-item ul {
+  list-style: none;
+  padding-left: 0.2rem;
+  margin-top: 0.3rem;
+}
+
+.role-item ul li {
+  padding: 0.15rem 0;
+  font-size: 0.92rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.role-item ul li::before {
+  content: "▹";
+  color: #2b6a8a;
+  font-weight: 700;
+}
+
+.two-col-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+}
+
+@media (max-width: 600px) {
+  .two-col-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.course-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1rem;
+}
+
+.course-list li {
+  background: #eaf3fa;
+  padding: 0.2rem 1rem;
+  border-radius: 30px;
+  font-size: 0.85rem;
+}
+
+.ref-item {
+  background: #f2f8fe;
+  padding: 0.6rem 1rem;
+  border-radius: 20px;
+  margin-bottom: 0.5rem;
+}
+
+.ref-item strong {
+  color: #0b2a3e;
+}
+
+.declaration {
+  background: #f1f7fc;
+  padding: 1rem 1.5rem;
+  border-radius: 30px;
+  font-style: italic;
+  border-left: 5px solid #2b6a8a;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #dce8f0;
+  margin: 1.5rem 0 0.8rem;
+}
+
+.footer-small {
+  text-align: right;
+  font-size: 0.8rem;
+  color: #5b7d96;
+}
+
+/* responsive fixes */
+@media (max-width: 600px) {
+  .sidebar {
+    padding: 1.5rem 1rem;
+  }
+  .main-content {
+    padding: 1.5rem 1rem;
+  }
+}
